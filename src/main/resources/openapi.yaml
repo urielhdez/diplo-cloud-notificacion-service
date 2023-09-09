@@ -1,0 +1,70 @@
+openapi: 3.0.2
+info:
+  title: Pixup Notificacion Microservice Endpoints
+  description: Definición de los Endpoints de Notificacion Service para el sistema Pixup
+  contact:
+    name: UNAM
+    url: https://www.unam.mx/
+    email: urielhdezorozco@yahoo.com.mx
+  version: v1
+servers:
+- url: http://localhost:8081
+tags:
+- name: notificacion
+  description: API del Recurso Notificacion
+paths:
+  /api/notificaciones/usuario:
+    post:
+      tags:
+      - notificacion
+      summary: Enviar Notificacion
+      operationId: enviarNotificacionAltaUsuario
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NotificacionRequest'
+        required: true
+      responses:
+        "201":
+          description: Notificacion Enviada Exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotificacionResponse'
+        "500":
+          description: No se encontro el tipo de notificacion para el evento registrar usuario
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    NotificacionRequest:
+      type: object
+      properties:
+        idUsuario:
+          type: string
+        email:
+          type: string
+    NotificacionResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        fechaNotificacion:
+          type: string
+          format: date-time  
+        idUsuario:
+          type: string
+        email:
+          type: string
+    ErrorResponse:
+      type: object
+      properties:
+        estatus:
+          type: integer
+        tipo:
+          type: string
+        mensaje:
+          type: string  
