@@ -1,5 +1,34 @@
 # Getting Started
 
+## Project
+
+`// TODO `
+
+## Deploy
+
+`// TODO `
+
+## Test
+
+Execute the next `curl` command to validate the deploy of the service. 
+
+```shell
+curl -X 'POST' \
+  'http://localhost:8081/api/notificaciones/usuario' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "idUsuario": "64f76d1d08199c722d6bc041",
+    "email": "urielhdezorozco@yahoo.com.mx"
+}' 
+```
+
+The expected result should looks like:
+
+```
+// TODO paste an example of the response
+```
+ 
 ### Reference Documentation
 For further reference, please consider the following sections:
 
