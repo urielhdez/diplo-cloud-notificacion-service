@@ -2,7 +2,13 @@
 
 ## Project
 
-`// TODO `
+Implementation of notification microservice for the Pixup application.
+The notification will be created for the following event:
+- User Register
+
+The following scripts are provided for the MongoDB database/collections creation:
+* notificaciondb_creation.js
+* tipo_notificacion_collection.js
 
 ## Deploy
 
@@ -26,7 +32,12 @@ curl -X 'POST' \
 The expected result should looks like:
 
 ```
-// TODO paste an example of the response
+{
+    "id": "65172566daeae0673186f249",
+    "fechaNotificacion": "2023-09-29T13:28:38.327-06:00",
+    "idUsuario": "64f76d1d08199c722d6bc041",
+    "email": "urielhdezorozco@yahoo.com.mx"
+}
 ```
  
 ### Reference Documentation
