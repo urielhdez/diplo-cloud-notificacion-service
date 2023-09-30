@@ -1,9 +1,0 @@
-
-curl -X 'POST' \
-  'http://localhost:8081/api/notificaciones/usuario' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "idUsuario": "64f76d1d08199c722d6bc041",
-    "email": "urielhdezorozco@yahoo.com.mx"
-}'
