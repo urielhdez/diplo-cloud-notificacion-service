@@ -12,7 +12,27 @@ The following scripts are provided for the MongoDB database/collections creation
 
 ## Deploy
 
-`// TODO `
+### Creating the image
+
+The image is based on [arm64/jdk-17](https://hub.docker.com/layers/arm64v8/openjdk/17-ea-16-jdk/images/sha256-149f7dbd5287cb06efc8c5d0dfffeffcc36e8a9872dca7736ef8c333a3eca6a2?context=explore)
+
+Complete specification is in the [Dockerfile](./Dockerfile)
+
+For build the image:
+
+`podman build -t notificaciones:1.0 .`
+
+Validate the image running a container:
+
+`podman run -p 8081:8081 notificaciones:v1`
+
+Expected output
+
+![Image running in a container over podman](_resources/image_container_podman.png)
+
+Once build, and proved the image, push it to docker hub
+
+podman push cafaray/notificaciones:1.0 
 
 ## Test
 
