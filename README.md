@@ -14,25 +14,34 @@ The following scripts are provided for the MongoDB database/collections creation
 
 ### Creating the image
 
-The image is based on [arm64/jdk-17](https://hub.docker.com/layers/arm64v8/openjdk/17-ea-16-jdk/images/sha256-149f7dbd5287cb06efc8c5d0dfffeffcc36e8a9872dca7736ef8c333a3eca6a2?context=explore)
+This image is based on [arm64/jdk-17](https://hub.docker.com/layers/arm64v8/openjdk/17-ea-16-jdk/images/sha256-149f7dbd5287cb06efc8c5d0dfffeffcc36e8a9872dca7736ef8c333a3eca6a2?context=explore) for Mac OS. 
 
-Complete specification is in the [Dockerfile](./Dockerfile)
+The complete specification of the image that contains the application is in the [Dockerfile](./Dockerfile)
 
-For build the image:
+### Building the image.
+
+Build the image using `docker` or `podman`, below the commands for using `podman`. More information on how to use it [here](https://podman.io/). First version is tagged as `notificaciones:1.0` 
 
 `podman build -t notificaciones:1.0 .`
 
-Validate the image running a container:
+### Running the application
 
-`podman run -p 8081:8081 notificaciones:v1`
+Run the application image into a container in `podman`, use the next command:
 
-Expected output
+`podman run -p 8081:8081 notificaciones:1.0`
+
+The expected output after the previous command looks like this:
 
 ![Image running in a container over podman](_resources/image_container_podman.png)
 
-Once build, and proved the image, push it to docker hub
+### Publishing 
 
-podman push cafaray/notificaciones:1.0 
+Publish the image in a __docker hub__ account using the next command. 
+
+> [!Important]
+> If you are not logged in to the hub, use the login command: `podman login docker.io -u {myuser}` then type the password.  
+
+`podman push cafaray/notificaciones:1.0`
 
 ## Test
 
