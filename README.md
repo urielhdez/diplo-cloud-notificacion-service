@@ -20,15 +20,20 @@ The complete specification of the image that contains the application is in the 
 
 ### Building the image.
 
-Build the image using `docker` or `podman`, below the commands for using `podman`. More information on how to use it [here](https://podman.io/). First version is tagged as `notificaciones:1.0` 
+Build the image using `docker` or `podman`, below the commands for using `podman`. More information on how to use it [here](https://podman.io/). The first version for a standard is frequently used `1.0`.
 
-`podman build -t notificaciones:1.0 .`
+[!Warning]
+Don't forget to use your account in the HUB to tag the image, because when pushing the image to the hub, the account is where it will be located. 
+
+cafaray/notificaciones:1.0` 
+
+`podman build -t cafaray/notificaciones:1.0 .`
 
 ### Running the application
 
 Run the application image into a container in `podman`, use the next command:
 
-`podman run -p 8081:8081 notificaciones:1.0`
+`podman run -p 8081:8081 cafaray/notificaciones:1.0`
 
 The expected output after the previous command looks like this:
 
