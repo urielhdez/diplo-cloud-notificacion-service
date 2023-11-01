@@ -1,0 +1,20 @@
+[
+  {
+    "email": "somemail@domain.es",
+    "id": "1001",
+    "idUsuario": "drax",
+    "fechaNotificacion": "2021-09-30T15:30:00+01:00"
+  },
+  {
+    "email": "anymail@domain.es",
+    "id": "1002",
+    "idUsuario": "rocket",
+    "fechaNotificacion": "2022-09-30T15:30:00+01:00"
+  },
+  {
+    "email": "yourmail@domain.es",
+    "id": "1003",
+    "idUsuario": "groot",
+    "fechaNotificacion": "2014-09-30T15:30:00+01:00"
+  }
+]

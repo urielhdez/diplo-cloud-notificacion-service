@@ -1,6 +1,8 @@
 package unam.diplomado.pixup.notificacionservice.service;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +40,25 @@ public class NotificacionServiceImpl implements NotificacionService {
         notificacion.setTipoNotificacion(tipoNotificacion.get());
         notificacionRepository.save(notificacion);
         return notificacion;
+	}
+
+	@Override
+	public List<Notificacion> getNotificaciones() {
+		List<Notificacion> notificaciones = new ArrayList<>();
+
+		Notificacion notificacion = new Notificacion();
+		TipoNotificacion tipoNotificacion = new TipoNotificacion();
+		tipoNotificacion.setId("1");
+		tipoNotificacion.setDescripcion("Registro de autor");
+
+		notificacion.setEmail("somemail@xdomain.es");
+		notificacion.setEnviada(true);
+		notificacion.setId("1001");
+		notificacion.setIdUsuario("some_user");
+		notificacion.setFechaNotificacion(new Date());
+		notificacion.setTipoNotificacion(tipoNotificacion);
+		notificaciones.add(notificacion);
+		return notificaciones;
 	}
 
 }

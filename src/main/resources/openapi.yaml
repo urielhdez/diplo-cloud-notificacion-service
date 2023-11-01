@@ -38,6 +38,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+  /api/notificaciones:
+    get:
+      tags:
+        - notificacion
+      summary: Listar Notificaciones
+      operationId: getNotificaciones
+      responses:
+        "200":
+          description: Listado de Notificaciones
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotificacionesResponse'
+        "500":
+          description: Ha ocurrido un errror al recuperar las notificaciones
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /api/notificaciones/id:
+    get:
+      tags:
+        - notificacion
+      summary: Obtiene una notificacion por id
+      operationId: getNotificacionById
+      responses:
+        "200":
+          description: Obtiene una Notificacion por identificador
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotificacionResponse'
+        "500":
+          description: Ha ocurrido un errror al recuperar la notificacion
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
     NotificacionRequest:
@@ -54,11 +92,16 @@ components:
           type: string
         fechaNotificacion:
           type: string
-          format: date-time  
+          format: date-time
         idUsuario:
           type: string
         email:
           type: string
+    NotificacionesResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/NotificacionResponse'
+
     ErrorResponse:
       type: object
       properties:
