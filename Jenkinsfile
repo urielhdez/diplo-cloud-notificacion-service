@@ -1,17 +1,33 @@
 pipeline {
-    agent any
+    agent { label maven }
 
     stages {
-        stage('Hello') {
+        stage('Clone Source') {
             steps {
-                echo 'Hello World'
+                checkout([$class: 'GitSCM',
+                            branches: [[name: '*/dev']],
+                            extensions: [
+                              [$class: 'RelativeTargetDirectory', relativeTargetDir: 'diplo-cloud-notificacion-service']
+                            ],
+                            userRemoteConfigs: [[url: 'https://github.com/urielhdez/diplo-cloud-notificacion-service.git']]
+                        ])
             }
         }
-        stage("Checkout") {
+        stage("Build Service") {
             steps {
-                checkout scm
+                dir('diplo-cloud-notificacion-service') {
+                    sh 'mvn clean install -DskipTests=true'
+                }
             }
         }
+
+        stage('Test') {
+            steps {
+                sh "mvn test"
+                step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+            }
+        }
+
         stage("Docker Build") {
             steps {
               sh '''
