@@ -15,8 +15,8 @@ pipeline {
         stage("Docker Build") {
             steps {
               sh '''
-                  oc start-build notificaciones
-                  # oc start-build -F notificaciones --from-dir=./
+                  oc start-build --from-file=./Dockerfile
+                  # oc start-build -F notificaciones --from-dir=./pom.xml
               '''
             }
         }
