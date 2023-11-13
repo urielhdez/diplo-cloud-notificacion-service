@@ -15,8 +15,8 @@ pipeline {
         stage("Docker Build") {
             steps {
               sh '''
-                  #oc start-build --from-build=<build_name>
-                  oc start-build -F red-api --from-dir=./api/
+                  oc start-build notificaciones
+                  # oc start-build -F notificaciones --from-dir=./
               '''
             }
         }
@@ -38,8 +38,8 @@ pipeline {
         stage("Docker Build") {
             steps {
               sh '''
-                  #oc start-build --from-build=<build_name>
-                  oc start-build -F red-api --from-dir=./api/
+                  oc start-build --from-build=notificaciones
+                  # oc start-build -F red-api --from-dir=./api/
               '''
             }
         }
