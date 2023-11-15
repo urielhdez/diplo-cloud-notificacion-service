@@ -45,13 +45,14 @@ public class NotificacionServiceApplicationJuniperTests {
 
 	// .withBasicAuth(ADMIN_TEST_LOGIN, ADMIN_TEST_PASSWORD)
 
-
+	/*LA PRUEB REQUIERE QUE EL SERVICIO ESTÉ LEVANTADO
 	@Test
 	public void getNotificacionesTest() {
 		TestRestTemplate testRestTemplate = new TestRestTemplate();
 		ResponseEntity<NotificacionResponse[]> response = testRestTemplate.getForEntity(BASE_URL, NotificacionResponse[].class);
 		Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
+	*/
 
 	@Test
 	public void getNotificacionByIdMockSuccessTest()  {

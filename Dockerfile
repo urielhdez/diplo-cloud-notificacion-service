@@ -1,5 +1,6 @@
 # Use an official OpenJDK runtime as a parent image
-FROM arm64v8/openjdk:17-ea-16-jdk
+#FROM arm64v8/openjdk:17-ea-16-jdk
+FROM maven:3.8.4-openjdk-17
 
 # Set the working directory inside the container
 WORKDIR /app
