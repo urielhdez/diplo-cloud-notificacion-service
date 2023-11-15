@@ -1,4 +1,9 @@
 pipeline {
+    agent any
+        tools {
+            // Use Java 8 for the build
+            jdk 'Java8'
+        }
     agent { label "maven" }
 
     stages {
