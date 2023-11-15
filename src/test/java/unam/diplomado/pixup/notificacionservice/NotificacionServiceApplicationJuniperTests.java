@@ -46,6 +46,7 @@ public class NotificacionServiceApplicationJuniperTests {
 	// .withBasicAuth(ADMIN_TEST_LOGIN, ADMIN_TEST_PASSWORD)
 
 	/*LA PRUEB REQUIERE QUE EL SERVICIO ESTÉ LEVANTADO
+
 	@Test
 	public void getNotificacionesTest() {
 		TestRestTemplate testRestTemplate = new TestRestTemplate();

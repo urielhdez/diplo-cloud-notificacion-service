@@ -73,6 +73,8 @@ Publish the image in a __docker hub__ account using the next command.
 
 ## Test
 
+`dev` branch for validate before pre-prod envviroment.
+
 Execute the next `curl` command to validate the deploy of the service. 
 
 ```shell
