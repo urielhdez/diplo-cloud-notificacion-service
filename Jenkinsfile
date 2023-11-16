@@ -2,7 +2,8 @@ pipeline {
     agent any
     tools {
         // Use Java 8 for the build
-        jdk 'JDK1.8'
+        //jdk 'JDK1.8'
+        jdk 'JDK11'
         maven 'maven'
     }
 
