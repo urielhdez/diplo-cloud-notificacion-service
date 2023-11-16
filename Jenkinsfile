@@ -21,7 +21,7 @@ pipeline {
         stage("Build Service") {
             steps {
                 dir('diplo-cloud-notificacion-service') {
-                    sh 'mvn clean install -DskipTests=true'
+                    sh 'mvn clean install -DskipTests=true -X'
                 }
             }
         }
