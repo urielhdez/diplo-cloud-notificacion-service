@@ -3,7 +3,7 @@ pipeline {
     tools {
         // Use Java 8 for the build
         //jdk 'JDK1.8'
-        jdk 'JDK11'
+        jdk 'JDK1.8'
         maven 'maven'
     }
 
@@ -22,7 +22,7 @@ pipeline {
         stage("Build Service") {
             steps {
                 dir('diplo-cloud-notificacion-service') {
-                    sh 'mvn clean install -DskipTests=true -X'
+                    sh 'mvn clean install -DskipTests=true'
                 }
             }
         }
