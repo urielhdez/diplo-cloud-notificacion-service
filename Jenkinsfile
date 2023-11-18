@@ -11,7 +11,7 @@ pipeline {
         stage('Clone Source') {
             steps {
                 checkout([$class: 'GitSCM',
-                            branches: [[name: '*/dev']],
+                            branches: [[name: '*/main']],
                             extensions: [
                               [$class: 'RelativeTargetDirectory', relativeTargetDir: 'diplo-cloud-notificacion-service']
                             ],
@@ -38,7 +38,6 @@ pipeline {
             steps {
               sh '''
                   oc start-build notificaciones --from-file=./Dockerfile
-                  # oc start-build -F notificaciones --from-dir=./pom.xml
               '''
             }
         }
