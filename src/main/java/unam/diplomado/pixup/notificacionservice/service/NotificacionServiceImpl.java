@@ -58,6 +58,21 @@ public class NotificacionServiceImpl implements NotificacionService {
 		notificacion.setFechaNotificacion(new Date());
 		notificacion.setTipoNotificacion(tipoNotificacion);
 		notificaciones.add(notificacion);
+
+
+		Notificacion notificacion2 = new Notificacion();
+		tipoNotificacion.setId("1");
+		tipoNotificacion.setDescripcion("Registro de libro");
+
+		notificacion.setEmail("anothermail@xdomain.es");
+		notificacion.setEnviada(true);
+		notificacion.setId("1005");
+		notificacion.setIdUsuario("the_user");
+		notificacion.setFechaNotificacion(new Date());
+		notificacion.setTipoNotificacion(tipoNotificacion);
+
+		notificaciones.add(notificacion2);
+
 		return notificaciones;
 	}
 
