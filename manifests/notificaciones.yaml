@@ -15,8 +15,8 @@ spec:
         app: notificaciones
     spec:
       containers:
-      - image: docker.io/cafaray/notificaciones:v2
-        name: notificaciones
+      - name: notificaciones
+        image: docker.io/cafaray/notificaciones:v2
         ports:
         - containerPort: 8081
           protocol: TCP

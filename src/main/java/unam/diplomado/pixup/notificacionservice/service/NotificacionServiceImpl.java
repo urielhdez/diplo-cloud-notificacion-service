@@ -53,8 +53,8 @@ public class NotificacionServiceImpl implements NotificacionService {
 
 		notificacion.setEmail("somemail@xdomain.es");
 		notificacion.setEnviada(true);
-		notificacion.setId("1001");
-		notificacion.setIdUsuario("some_user");
+		notificacion.setId("1004");
+		notificacion.setIdUsuario("another_user");
 		notificacion.setFechaNotificacion(new Date());
 		notificacion.setTipoNotificacion(tipoNotificacion);
 		notificaciones.add(notificacion);
