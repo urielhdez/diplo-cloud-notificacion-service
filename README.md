@@ -1,4 +1,4 @@
-# Getting Started - Automatism using OPCS
+# Getting Started
 
 ## Project
 
